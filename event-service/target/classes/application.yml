@@ -1,0 +1,43 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:rahul
+    driverClassName: org.h2.Driver
+  h2:
+    console:
+      enabled: true
+
+  jpa:
+    hibernate:
+      ddl-auto: update # Change to create or create-drop if needed
+    show-sql: true # Optional: to show SQL statements in the console
+
+  application:
+    name: event-service
+
+server:
+  port: 7000
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8080/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  info:
+    env:
+      enabled: true
+
+info:
+  app:
+    name: Event Service
+    description: Event microservices application
+    version: 1.0.0
+
+jwt:
+  secret: "[a-zA-Z0-09._]^+$SecretKeyForJWTtokenwecanGenratethekeyasperourwishyoucanaddsymbolsAlso!!!!$UserMicroservice"
